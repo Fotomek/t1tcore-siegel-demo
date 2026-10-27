@@ -1,0 +1,56 @@
+<!doctype html><html lang="de"><meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T1T Siegel lebendig (Entwurf)</title>
+<style>
+:root{--gold:#b8860b;--gold2:#d4a21e;--bg:#faf9f6;--ink:#1d1d1f}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--ink:#f4f0e6;--gold:#d4a21e;--gold2:#e8bc42}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:48px 20px}
+h1{font:400 clamp(28px,5vw,44px) Newsreader,Georgia,serif}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;margin-top:40px}
+.card{text-align:center}.card p{margin:8px 0 0;font-size:15px;opacity:.75}
+.spacer{height:70vh}
+.seal{width:min(200px,60vw);height:auto;display:block;margin:0 auto;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;overflow:visible}
+.seal *{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transform-box:fill-box;transform-origin:center}
+.seal .dot{fill:var(--gold);stroke:none}
+/* Einblendung: Linien zeichnen sich */
+.seal .draw{stroke-dasharray:1;stroke-dashoffset:1}
+.seal.in .draw{animation:draw 1.4s cubic-bezier(.22,.61,.36,1) forwards}
+.seal .fade{opacity:0}.seal.in .fade{animation:fadein .8s .6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fadein{to{opacity:1}}
+/* Puls und Leuchten bei Hover, Tippen, Fokus */
+.seal{transition:filter .4s,transform .4s}
+.seal:hover,.seal:focus-visible,.seal.pulse{filter:drop-shadow(0 0 10px var(--gold2));transform:scale(1.04)}
+.seal .wave{opacity:0}
+.seal:hover .wave,.seal:focus-visible .wave,.seal.pulse .wave{animation:wave 1.6s ease-out infinite}
+.seal:hover .w2,.seal.pulse .w2{animation-delay:.5s}
+@keyframes wave{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+/* Kompassstern dreht sich sanft, Nadel schwingt */
+.seal:hover .spin,.seal.pulse .spin{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal:hover .beat,.seal.pulse .beat{animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.25)}}
+/* Bewegung reduzieren: alles still, sofort sichtbar */
+@media(prefers-reduced-motion:reduce){
+.seal .draw{stroke-dashoffset:0;animation:none!important}.seal .fade{opacity:1;animation:none!important}
+.seal,.seal *{animation:none!important;transition:none!important}.seal .wave{display:none}
+.seal:hover,.seal:focus-visible{filter:drop-shadow(0 0 6px var(--gold2));transform:none}}
+</style>
+<main>
+<h1>Siegel, die leben (Entwurf)</h1>
+<p>Fahren Sie mit der Maus darüber oder tippen Sie darauf. Beim Scrollen zeichnen sich die Siegel von selbst. Mit eingeschalteter Systemoption „Bewegung reduzieren“ bleiben sie ruhig und stehen sofort da.</p>
+<div class="spacer"></div>
+<div class="grid">
+<div class="card"><svg class="seal" viewBox="0 0 200 200" tabindex="0" role="img" aria-label="Siegel Trust"><path class="wave" d="M100 22 L168 46 V100 C168 142 138 168 100 182 C62 168 32 142 32 100 V46 Z"/><path class="draw" pathLength="1" d="M100 22 L168 46 V100 C168 142 138 168 100 182 C62 168 32 142 32 100 V46 Z"/><path class="draw" pathLength="1" d="M70 102 L92 124 L132 80"/></svg><p>Trust</p></div>
+<div class="card"><svg class="seal" viewBox="0 0 200 200" tabindex="0" role="img" aria-label="Siegel Resonance"><circle class="wave" cx="100" cy="100" r="84"/><circle class="wave w2" cx="100" cy="100" r="84"/><circle class="draw" pathLength="1" cx="100" cy="100" r="84"/><circle class="draw" pathLength="1" cx="100" cy="100" r="62"/><circle class="draw" pathLength="1" cx="100" cy="100" r="40"/><circle class="draw" pathLength="1" cx="100" cy="100" r="18"/><circle class="dot fade beat" cx="100" cy="100" r="6"/></svg><p>Resonance</p></div>
+<div class="card"><svg class="seal" viewBox="0 0 200 200" tabindex="0" role="img" aria-label="Siegel True"><circle class="draw" pathLength="1" cx="100" cy="100" r="88"/><g class="spin"><path class="draw" pathLength="1" d="M100 16 L112 88 L184 100 L112 112 L100 184 L88 112 L16 100 L88 88 Z"/><path class="draw" pathLength="1" d="M100 52 L108 92 L148 100 L108 108 L100 148 L92 108 L52 100 L92 92 Z" opacity=".6"/></g><circle class="dot fade" cx="100" cy="100" r="5"/></svg><p>True</p></div>
+<div class="card"><svg class="seal" viewBox="0 0 200 200" tabindex="0" role="img" aria-label="Gesamtsiegel Trust and True"><circle class="wave" cx="100" cy="100" r="90"/><circle class="draw" pathLength="1" cx="100" cy="100" r="90"/><circle class="draw" pathLength="1" cx="100" cy="100" r="76"/><path class="draw" pathLength="1" d="M100 52 L108 92 L148 100 L108 108 L100 148 L92 108 L52 100 L92 92 Z"/><circle class="dot fade beat" cx="100" cy="30" r="5"/><circle class="dot fade beat" cx="160" cy="135" r="5"/><circle class="dot fade beat" cx="40" cy="135" r="5"/></svg><p>Trust and True</p></div>
+</div>
+<div class="spacer"></div>
+</main>
+<script>
+(function(){var s=document.querySelectorAll('.seal');
+if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('in')});}
+else{var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');o.unobserve(x.target)}})},{threshold:.4});s.forEach(function(e){o.observe(e)})}
+s.forEach(function(e){e.addEventListener('click',function(){e.classList.add('pulse');setTimeout(function(){e.classList.remove('pulse')},2400)})});})();
+</script></html>
