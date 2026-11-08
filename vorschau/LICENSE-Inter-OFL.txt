@@ -1,17 +1,21 @@
 Schrift der öffentlichen Vorschau
 =================================
 
-Die Datei index.html bettet eine Teilmenge der Schrift Inter ein.
+Die Datei fonts/inter-normal-latin.woff2 ist die lokal eingebundene Schrift Inter.
 Die Namens-Tabelle dieser Schriftdatei enthält:
 
 Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
 Schriftname: Inter
 Unterfamilie: Regular
-Eindeutiger Name: 4.001;git-66647c0bb;RSMS;Inter-Regular-Regular
+Eindeutiger Name: 4.001;RSMS;Inter-Regular
 Version: Version 4.001;git-66647c0bb
 
+Die Datei ist eine variable Schrift mit einer Gewichtsachse von 100 bis 900.
+Es wurde nichts an der Schriftdatei geändert. Sie wird von dieser Vorschau
+nur lokal geladen, ohne Verbindung zu einem Schriftenanbieter.
+
 Der folgende Text ist der vollständige Lizenztext, den das Inter-Projekt
-zu dieser Schrift mitliefert (LICENSE.txt, abgerufen am 08.11.2026).
+zu dieser Schrift mitliefert (SIL Open Font License 1.1).
 Er beginnt mit demselben Copyright-Satz. Es wurde nichts am Lizenztext geändert.
 
 -----
